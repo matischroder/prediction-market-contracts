@@ -1,0 +1,35 @@
+{
+  "name": "prediction-market-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for decentralized cross-chain prediction market platform",
+  "main": "index.js",
+  "scripts": {
+    "build": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.ts",
+    "node": "hardhat node",
+    "clean": "hardhat clean"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "smart-contracts",
+    "prediction-market",
+    "chainlink",
+    "defi"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@types/node": "^20.0.0",
+    "hardhat": "^2.17.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.8.0",
+    "@chainlink/contracts-ccip": "^0.8.0",
+    "@openzeppelin/contracts": "^4.9.0",
+    "dotenv": "^16.0.0"
+  }
+}
