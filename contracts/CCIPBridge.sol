@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-import {IRouterClient} from "@chainlink/contracts-ccip/src/v0.8/ccip/interfaces/IRouterClient.sol";
-import {Client} from "@chainlink/contracts-ccip/src/v0.8/ccip/libraries/Client.sol";
-import {LinkTokenInterface} from "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol";
+import "./chainlink/ccip/interfaces/IRouterClient.sol";
+import "./chainlink/ccip/libraries/Client.sol";
+import "./chainlink/interfaces/LinkTokenInterface.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract CCIPBridge {
@@ -47,14 +47,14 @@ contract CCIPBridge {
             feeToken: address(i_linkToken)
         });
         
-        uint256 fees = i_router.getFee(_destinationChainSelector, message);
+        uint256 fees = i_router.getFee(_destinationChainSelector, abi.encode(message));
         
         IERC20(_token).transferFrom(msg.sender, address(this), _amount);
         IERC20(_token).approve(address(i_router), _amount);
         
         i_linkToken.approve(address(i_router), fees);
         
-        messageId = i_router.ccipSend(_destinationChainSelector, message);
+        messageId = i_router.ccipSend(_destinationChainSelector, abi.encode(message));
         
         emit MessageSent(messageId, _destinationChainSelector, _receiver, _amount);
         

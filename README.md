@@ -56,17 +56,20 @@ npm test
 ## Deployment
 
 ### Local Network
+
 ```bash
 npx hardhat node
 npm run deploy -- --network localhost
 ```
 
 ### Mumbai Testnet
+
 ```bash
 npm run deploy -- --network mumbai
 ```
 
 ### Sepolia Testnet
+
 ```bash
 npm run deploy -- --network sepolia
 ```
@@ -74,6 +77,7 @@ npm run deploy -- --network sepolia
 ## Contract Addresses
 
 ### Mumbai Testnet
+
 - MarketFactory: `0x...`
 - MockUSDC: `0x...`
 - ProofOfReservesGuard: `0x...`
@@ -85,7 +89,10 @@ npm run deploy -- --network sepolia
 ### Creating a Market
 
 ```javascript
-const marketFactory = await ethers.getContractAt("MarketFactory", FACTORY_ADDRESS);
+const marketFactory = await ethers.getContractAt(
+  "MarketFactory",
+  FACTORY_ADDRESS
+);
 const resolutionTime = Math.floor(Date.now() / 1000) + 86400; // 24 hours
 
 await marketFactory.createMarket(
@@ -117,21 +124,27 @@ await market.claimPrize();
 ## Chainlink Services Integration
 
 ### Price Feeds
+
 Used for market resolution and dynamic odds calculation.
 
 ### Functions
+
 Calls external APIs to get real-world data for market resolution.
 
 ### VRF (Verifiable Random Function)
+
 Selects random bonus winners among correct predictors.
 
 ### Automation (Keepers)
+
 Automatically resolves markets when resolution time is reached.
 
 ### CCIP (Cross-Chain Interoperability Protocol)
+
 Enables cross-chain prize claims.
 
 ### Proof of Reserves
+
 Verifies protocol solvency before accepting large bets.
 
 ## Security Considerations

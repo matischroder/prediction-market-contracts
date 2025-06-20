@@ -24,7 +24,8 @@ describe("PredictionMarket", function () {
     // Mock addresses for testing
     const mockPriceFeed = "0x0000000000000000000000000000000000000001";
     const mockVRFCoordinator = "0x0000000000000000000000000000000000000002";
-    const mockKeyHash = "0x0000000000000000000000000000000000000000000000000000000000000001";
+    const mockKeyHash =
+      "0x0000000000000000000000000000000000000000000000000000000000000001";
     const mockSubscriptionId = 1;
 
     // Deploy MarketFactory
@@ -45,7 +46,9 @@ describe("PredictionMarket", function () {
     );
 
     const markets = await marketFactory.getAllMarkets();
-    const PredictionMarket = await ethers.getContractFactory("PredictionMarket");
+    const PredictionMarket = await ethers.getContractFactory(
+      "PredictionMarket"
+    );
     market = PredictionMarket.attach(markets[0]);
 
     // Mint USDC to users
@@ -62,10 +65,10 @@ describe("PredictionMarket", function () {
 
     it("Should track market count correctly", async function () {
       const initialCount = await marketFactory.getMarketsCount();
-      
+
       const resolutionTime = Math.floor(Date.now() / 1000) + 86400;
       await marketFactory.createMarket("Test market 2", resolutionTime);
-      
+
       const newCount = await marketFactory.getMarketsCount();
       expect(newCount).to.equal(initialCount.add(1));
     });
@@ -80,7 +83,7 @@ describe("PredictionMarket", function () {
 
     it("Should allow users to place YES bets", async function () {
       await market.connect(user1).placeBet(true, BET_AMOUNT);
-      
+
       const marketInfo = await market.getMarketInfo();
       expect(marketInfo._totalYesBets).to.equal(BET_AMOUNT);
       expect(marketInfo._totalNoBets).to.equal(0);
@@ -88,7 +91,7 @@ describe("PredictionMarket", function () {
 
     it("Should allow users to place NO bets", async function () {
       await market.connect(user1).placeBet(false, BET_AMOUNT);
-      
+
       const marketInfo = await market.getMarketInfo();
       expect(marketInfo._totalYesBets).to.equal(0);
       expect(marketInfo._totalNoBets).to.equal(BET_AMOUNT);
@@ -97,7 +100,7 @@ describe("PredictionMarket", function () {
     it("Should calculate odds correctly", async function () {
       await market.connect(user1).placeBet(true, BET_AMOUNT);
       await market.connect(user2).placeBet(false, BET_AMOUNT.mul(2));
-      
+
       const odds = await market.getCurrentOdds();
       // With 100 YES and 200 NO, YES should get 66.67% and NO 33.33%
       expect(odds.yesOdds).to.be.closeTo(6667, 10); // Allow small rounding error
@@ -111,9 +114,9 @@ describe("PredictionMarket", function () {
     });
 
     it("Should reject bets with zero amount", async function () {
-      await expect(
-        market.connect(user1).placeBet(true, 0)
-      ).to.be.revertedWith("Amount must be greater than 0");
+      await expect(market.connect(user1).placeBet(true, 0)).to.be.revertedWith(
+        "Amount must be greater than 0"
+      );
     });
   });
 
@@ -129,9 +132,9 @@ describe("PredictionMarket", function () {
     });
 
     it("Should reject invalid range", async function () {
-      await expect(
-        marketFactory.getMarketsByRange(5, 10)
-      ).to.be.revertedWith("Invalid range");
+      await expect(marketFactory.getMarketsByRange(5, 10)).to.be.revertedWith(
+        "Invalid range"
+      );
     });
   });
 

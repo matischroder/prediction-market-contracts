@@ -28,8 +28,12 @@
   },
   "dependencies": {
     "@chainlink/contracts": "^0.8.0",
-    "@chainlink/contracts-ccip": "^0.8.0",
+    "@chainlink/contracts-ccip": "^1.6.0",
+    "@headlessui/react": "^2.2.4",
+    "@heroicons/react": "^2.2.0",
     "@openzeppelin/contracts": "^4.9.0",
-    "dotenv": "^16.0.0"
+    "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
+    "fs-extra": "^11.3.0"
   }
 }

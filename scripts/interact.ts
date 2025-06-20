@@ -24,15 +24,26 @@ async function main() {
     console.log("Interacting with market:", marketAddress);
 
     // Get market contract
-    const PredictionMarket = await ethers.getContractFactory("PredictionMarket");
+    const PredictionMarket = await ethers.getContractFactory(
+      "PredictionMarket"
+    );
     const market = PredictionMarket.attach(marketAddress);
 
     // Get market info
     const marketInfo = await market.getMarketInfo();
     console.log("Market question:", marketInfo._question);
-    console.log("Resolution time:", new Date(marketInfo._resolutionTime.toNumber() * 1000));
-    console.log("Total YES bets:", ethers.utils.formatUnits(marketInfo._totalYesBets, 6));
-    console.log("Total NO bets:", ethers.utils.formatUnits(marketInfo._totalNoBets, 6));
+    console.log(
+      "Resolution time:",
+      new Date(marketInfo._resolutionTime.toNumber() * 1000)
+    );
+    console.log(
+      "Total YES bets:",
+      ethers.utils.formatUnits(marketInfo._totalYesBets, 6)
+    );
+    console.log(
+      "Total NO bets:",
+      ethers.utils.formatUnits(marketInfo._totalNoBets, 6)
+    );
     console.log("Is resolved:", marketInfo._isResolved);
 
     // Get current odds
