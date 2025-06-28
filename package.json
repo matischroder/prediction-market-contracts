@@ -6,7 +6,11 @@
   "scripts": {
     "build": "hardhat compile",
     "test": "hardhat test",
-    "deploy": "hardhat run scripts/deploy.ts",
+    "deploy": "hardhat run scripts/deploy.ts --network hardhat",
+    "deploy:fork": "hardhat run scripts/deploy.ts --network hardhat",
+    "deploy:local": "cp hardhat.config.local.ts hardhat.config.ts && hardhat run scripts/deploy.ts --network hardhat && cp hardhat.config.fork.ts hardhat.config.ts",
+    "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "fund:link": "hardhat run scripts/fund-link.ts --network sepolia",
     "node": "hardhat node",
     "clean": "hardhat clean"
   },

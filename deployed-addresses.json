@@ -1,0 +1,25 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "deployedAt": "2025-06-28T11:44:14.078Z",
+  "contracts": {
+    "mockUSDC": "0xDAE4B69d86863263A275BA10289f6919F0EE7137",
+    "marketFactory": "0x440e762AB458513bF6E658F1458eF0FE7a4DaA0f",
+    "testMarket": "Not created - needs LINK funding"
+  },
+  "priceFeeds": {
+    "BTC/USD": "0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43",
+    "ETH/USD": "0x694AA1769357215DE4FAC081bf1f309aDC325306",
+    "LINK/USD": "0xc59E3633BAAC79493d908e63626716e204A45EdF"
+  },
+  "chainlink": {
+    "VRF_COORDINATOR": "0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625",
+    "LINK_TOKEN": "0x779877A7B0D9E8603169DdbD7836e478b4624789",
+    "KEY_HASH": "0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c",
+    "SUBSCRIPTION_ID": 1,
+    "AUTOMATION_REGISTRAR": "0xb0E49c5D0d05cbc241d68c05BC5BA1d1B7B72976"
+  },
+  "isProduction": true,
+  "isFork": false,
+  "isLocal": false
+}
