@@ -185,7 +185,7 @@ contract PredictionMarket is IPredictionMarket, ReentrancyGuard, AutomationCompa
         market.resolved = true;
 
         market.totalTreasuryFee = (market.totalPool * market.treasuryFee) / 10000;
-        market.randomBonusPool = (market.totalPool * 2) / 100; // 2%
+        market.randomBonusPool = (market.totalPool * 200) / 10000; // 2%
 
         _calculatePayouts();
 

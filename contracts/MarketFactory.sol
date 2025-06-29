@@ -20,11 +20,7 @@ contract MarketFactory is Ownable {
     // Chainlink Automation configuration
     address public immutable automationRegistrar;
     uint256 public constant AUTOMATION_GAS_LIMIT = 500000; // Gas limit for automation
-    uint256 public constant AUTOMATION_FUNDING = 1 ether; // 1 LINK for automation registration
-
-    // Auto-funding configuration
-    uint256 public constant MIN_ETH_FUNDING = 0.001 ether; // 0.001 ETH per market
-    uint256 public constant MIN_LINK_FUNDING = 0.1 ether; // 0.1 LINK per market
+    uint256 public constant AUTOMATION_FUNDING = 0.1 ether; // 0.1 LINK for automation registration
 
     // Treasury/Factory Fee Configuration (PancakeSwap style)
     uint16 public treasuryFee = 200; // 2% in basis points (100 = 1%)
@@ -101,10 +97,6 @@ contract MarketFactory is Ownable {
         } catch {
             revert("Price feed is not accessible or invalid");
         }
-
-        require(ethBalance >= MIN_ETH_FUNDING, "Factory needs more ETH funding for automation");
-
-        require(linkBalance >= MIN_LINK_FUNDING, "Factory needs more LINK funding for VRF");
 
         PredictionMarket market = new PredictionMarket(
             _assetName,
