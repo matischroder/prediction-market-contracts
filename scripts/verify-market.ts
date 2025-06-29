@@ -1,7 +1,7 @@
 import { run, ethers } from "hardhat";
 
 async function main() {
-    const PREDICTION_MARKET = "0x398A8491DB9f6b66e4a33E218d97cB931fB5A2C7";
+    const PREDICTION_MARKET = "0x6a9ad75eac78503719ce1e6b9978d1Dd46929FCD";
 
     console.log("🔍 Starting PredictionMarket verification...");
     console.log("📍 Contract address:", PREDICTION_MARKET);

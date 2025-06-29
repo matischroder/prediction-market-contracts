@@ -1,20 +1,20 @@
 {
-    "network": "sepolia",
-    "chainId": 11155111,
-    "deployedAt": "2025-06-29T13:55:39.710Z",
-    "contracts": {
-        "nostronet": "0x40182ECFda2368E614Aac46a58f653aE9fcF41bB",
-        "marketFactory": "0x5469D7256DBF4c5B63F1FA940AaaAd4fE029Fa7f",
-        "testMarket": "Not created - needs LINK funding"
-    },
-    "chainlink": {
-        "VRF_COORDINATOR": "0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625",
-        "LINK_TOKEN": "0x779877A7B0D9E8603169DdbD7836e478b4624789",
-        "KEY_HASH": "0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c",
-        "SUBSCRIPTION_ID": 1,
-        "AUTOMATION_REGISTRAR": "0xb0E49c5D0d05cbc241d68c05BC5BA1d1B7B72976"
-    },
-    "isProduction": true,
-    "isFork": false,
-    "isLocal": false
+  "network": "sepolia",
+  "chainId": 11155111,
+  "deployedAt": "2025-06-29T19:05:01.645Z",
+  "contracts": {
+    "nostronet": "0xE150Ae54255e4aebdd7a53165a4190E7790117f3",
+    "marketFactory": "0x8a81d0f0B5Fa41b9233700cdFB1A8ff96453D7bf",
+    "testMarket": "Not created - needs LINK funding"
+  },
+  "chainlink": {
+    "VRF_COORDINATOR": "0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625",
+    "LINK_TOKEN": "0x779877A7B0D9E8603169DdbD7836e478b4624789",
+    "KEY_HASH": "0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c",
+    "SUBSCRIPTION_ID": 1,
+    "AUTOMATION_REGISTRAR": "0xb0E49c5D0d05cbc241d68c05BC5BA1d1B7B72976"
+  },
+  "isProduction": true,
+  "isFork": false,
+  "isLocal": false
 }

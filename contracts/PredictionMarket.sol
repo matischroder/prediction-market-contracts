@@ -301,11 +301,11 @@ contract PredictionMarket is IPredictionMarket, ReentrancyGuard, AutomationCompa
     }
 
     function _transferFundsToFactory() internal {
-        if (market.treasuryFee > 0) {
-            bettingToken.safeTransfer(factory, market.treasuryFee);
+        if (market.totalTreasuryFee > 0) {
+            bettingToken.safeTransfer(factory, market.totalTreasuryFee);
 
-            IMarketFactory(factory).collectFees(market.treasuryFee);
-            emit FeesTransferredToFactory(market.treasuryFee, 0);
+            IMarketFactory(factory).collectFees(market.totalTreasuryFee);
+            emit FeesTransferredToFactory(market.totalTreasuryFee, 0);
         }
 
         uint256 ethBalance = address(this).balance;

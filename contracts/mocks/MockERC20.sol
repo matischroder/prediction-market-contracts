@@ -24,8 +24,8 @@ contract MockERC20 is ERC20 {
     function claimFaucet() external {
         require(block.timestamp >= lastFaucetClaim[msg.sender] + FAUCET_COOLDOWN, "Faucet cooldown not expired");
 
-        lastFaucetClaim[msg.sender] = block.timestamp;
         _mint(msg.sender, FAUCET_AMOUNT);
+        lastFaucetClaim[msg.sender] = block.timestamp;
 
         emit FaucetClaimed(msg.sender, FAUCET_AMOUNT);
     }
