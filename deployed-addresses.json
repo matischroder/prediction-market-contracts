@@ -1,16 +1,11 @@
 {
   "network": "sepolia",
   "chainId": 11155111,
-  "deployedAt": "2025-06-29T08:52:03.107Z",
+  "deployedAt": "2025-06-29T13:30:15.057Z",
   "contracts": {
-    "mockUSDC": "0x99dbbE1E1983994bE86D20E4313DC728b01D7797",
-    "marketFactory": "0x2E649f0d6e3028D55F263f7c01e7Be5BC04dED7B",
+    "mockUSDC": "0x88840B4CA10e3a0304889B694b3807C6d2bfbe5C",
+    "marketFactory": "0xFD367aD45E83dC47b0a41147a6668c22E0AFA323",
     "testMarket": "Not created - needs LINK funding"
-  },
-  "priceFeeds": {
-    "BTC/USD": "0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43",
-    "ETH/USD": "0x694AA1769357215DE4FAC081bf1f309aDC325306",
-    "LINK/USD": "0xc59E3633BAAC79493d908e63626716e204A45EdF"
   },
   "chainlink": {
     "VRF_COORDINATOR": "0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625",
